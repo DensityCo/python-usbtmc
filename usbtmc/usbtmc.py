@@ -332,6 +332,9 @@ class Instrument(object):
                 raise UsbtmcException("No device specified", 'init')
             else:
                 self.device = find_device(self.idVendor, self.idProduct, self.iSerial)
+		print format(self.idVendor, '04x')
+		print format(self.idProduct, '04x')
+		print self.iSerial
                 if self.device is None:
                     raise UsbtmcException("Device not found", 'init')
 
